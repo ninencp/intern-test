@@ -3,7 +3,7 @@ from ultralytics.utils.plotting import Annotator, colors
 import cv2
 
 # Load YOLO model
-model = YOLO("yolov8a.pt")
+model = YOLO("yolov8n.pt")
 
 
 def draw_boxes(frame, boxes):
