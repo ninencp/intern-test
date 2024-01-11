@@ -42,11 +42,6 @@ if __name__ == "__main__":
     video_path = "internship-2024/CatZoomies.mp4"
     cap = cv2.VideoCapture(video_path)
 
-    # Define the codec and create VideoWriter object
-    video_writer = cv2.VideoWriter(
-        video_path + "_demo.avi", cv2.VideoWriter_fourcc(*"MJPG"), 30, (1280, 720)
-    )
-
     while cap.isOpened():
         # Read image frame
         ret, frame = cap.read()
@@ -59,9 +54,6 @@ if __name__ == "__main__":
             font = cv2.FONT_HERSHEY_SIMPLEX
             cv2.putText(frame_result, "Natchapol-Clicknext-Internship-2024", (666, 30), font, 1, (0, 0, 255), 2, cv2.LINE_AA)
 
-            # Write result to video
-            video_writer.write(frame_result)
-
             # Show result
             cv2.namedWindow("Video", cv2.WINDOW_NORMAL)
 
@@ -72,6 +64,5 @@ if __name__ == "__main__":
             break
 
     # Release the VideoCapture object and close the window
-    video_writer.release()
     cap.release()
     cv2.destroyAllWindows()
