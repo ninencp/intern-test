@@ -32,7 +32,7 @@ def detect_object(frame):
     results = model.prediction(frame)
 
     for result in results:
-    frame = draw_boxes(frame, result.boxes)
+        frame = draw_boxes(frame, result.boxes)
 
     return frame
 
