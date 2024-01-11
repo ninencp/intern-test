@@ -27,7 +27,7 @@ def detect_object(frame):
     """Detect object from image frame"""
 
     # Detect object from image frame
-    results = model.prediction(frame)
+    results = model.predict(frame)
 
     for result in results:
         frame = draw_boxes(frame, result.boxes)
@@ -36,7 +36,7 @@ def detect_object(frame):
 
 
 if __name__ == "__main__":
-    video_path = "CatZoomies.mp4"
+    video_path = "internship-2024/CatZoomies.mp4"
     cap = cv2.VideoCapture(video_path)
 
     # Define the codec and create VideoWriter object
