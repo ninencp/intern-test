@@ -48,7 +48,7 @@ if __name__ == "__main__":
 
     while cap.isOpened():
         # Read image frame
-        ret, frame = cap.read_frame()
+        ret, frame = cap.read()
 
         if ret:
             # Detect motorcycle from image frame
