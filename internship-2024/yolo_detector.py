@@ -21,7 +21,7 @@ def draw_boxes(frame, boxes):
             confidence = box.conf
 
             # Draw bounding box
-            annotator.box_label(box=coordinator, label=class_name, color=colors(class_id, True))
+            annotator.box_label(box=coordinator, label=class_name, color=(255, 0, 0))
 
     return annotator.result()
 
