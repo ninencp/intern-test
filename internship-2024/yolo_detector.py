@@ -55,15 +55,15 @@ if __name__ == "__main__":
             # Detect motorcycle from image frame
             frame_result = detect_object(frame)
 
+            # put text on top-right corner
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            cv2.putText(frame_result, "Natchapol-Clicknext-Internship-2024", (666, 30), font, 1, (0, 0, 255), 2, cv2.LINE_AA)
+
             # Write result to video
             video_writer.write(frame_result)
 
             # Show result
             cv2.namedWindow("Video", cv2.WINDOW_NORMAL)
-
-            # put text on top-right corner
-            font = cv2.FONT_HERSHEY_SIMPLEX
-            cv2.putText(frame, "Natchapol-Clicknext-Internship-2024", (666, 30), font, 1, (0, 0, 255), 2)
 
             cv2.imshow("Video", frame_result)
             cv2.waitKey(30)
