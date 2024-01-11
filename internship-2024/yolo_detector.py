@@ -60,6 +60,11 @@ if __name__ == "__main__":
 
             # Show result
             cv2.namedWindow("Video", cv2.WINDOW_NORMAL)
+
+            # put text on top-right corner
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            cv2.putText(frame, "Natchapol-Clicknext-Internship-2024", (666, 30), font, 1, (0, 0, 255), 2)
+
             cv2.imshow("Video", frame_result)
             cv2.waitKey(30)
 
