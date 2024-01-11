@@ -14,11 +14,14 @@ def draw_boxes(frame, boxes):
     for box in boxes:
         class_id = box.cls
         class_name = model.names[int(class_id)]
-        coordinator = box.xyxy[0]
-        confidence = box.conf
 
-        # Draw bounding box
-        annotator.box_label(box=coordinator, label=class_name, color=colors(class_id, True))
+        # detect cat only
+        if class_name == "cat":
+            coordinator = box.xyxy[0]
+            confidence = box.conf
+
+            # Draw bounding box
+            annotator.box_label(box=coordinator, label=class_name, color=colors(class_id, True))
 
     return annotator.result()
 
