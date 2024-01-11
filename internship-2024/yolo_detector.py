@@ -39,11 +39,11 @@ def detect_object(frame):
 
 if __name__ == "__main__":
     video_path = "CatZoomies.mp4"
-    cap = cv.VideoCapture(video_path)
+    cap = cv2.VideoCapture(video_path)
 
     # Define the codec and create VideoWriter object
-    video_writer = cv.VideoWriter(
-        video_path + "_demo.avi", cv.VideoWriter_fourcc(*"MJPG"), 30, (1280, 720)
+    video_writer = cv2.VideoWriter(
+        video_path + "_demo.avi", cv2.VideoWriter_fourcc(*"MJPG"), 30, (1280, 720)
     )
 
     while cap.isOpened():
@@ -58,9 +58,9 @@ if __name__ == "__main__":
             video_writer.write(frame_result)
 
             # Show result
-            cv.namedWindow("Video", cv.WINDOW_NORMAL)
-            cv.imshow("Video", frame_result)
-            cv.waitKey(30)
+            cv2.namedWindow("Video", cv2.WINDOW_NORMAL)
+            cv2.imshow("Video", frame_result)
+            cv2.waitKey(30)
 
         else:
             break
